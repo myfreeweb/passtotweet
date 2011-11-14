@@ -11,7 +11,7 @@ else
 
 h2 'Add a password'
 form action: '', method: 'post', ->
-  input type: 'text', name: 'pwd'
+  input type: 'text', name: 'pwd', maxlength: '128'
   button type: 'submit', 'Add!'
 
 h2 -> a href: '/logout', 'Log out'

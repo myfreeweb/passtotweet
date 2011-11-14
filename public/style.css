@@ -52,6 +52,7 @@ input, textarea, button {
   border: #4e9a06 solid 1px;
   background: #fefefe;
 }
+:invalid {  border-color: #cc0000; }
 footer {
   margin-top: 2em;
   padding-top: 0.5em;

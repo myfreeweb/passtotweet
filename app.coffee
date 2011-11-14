@@ -64,12 +64,12 @@ require('zappa') process.env.PORT or 8080, ->
     c = twi.cookie @request
     if c
       p = @body.pwd
-      if typeof p isnt 'undefined' and p.length > 5 and p.length < 128
+      if typeof p isnt 'undefined' and p.length > 6 and p.length < 128
         db.rpush c.user_id, p, (err) =>
           @request.flash 'info', 'Successfully added password!'
           @redirect '/manage'
       else
-        @request.flash 'error', 'Invalid password!'
+        @request.flash 'error', 'Invalid password! Should be at least 6 characters long'
         @redirect '/manage'
     else
       @redirect '/auth'

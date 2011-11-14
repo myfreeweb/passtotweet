@@ -25,3 +25,8 @@ html lang: 'en', ->
       a href: 'http://heroku.com', 'Heroku'
       text '. '
       a href: 'https://github.com/myfreeweb/passtotweet', 'Open source.'
+    script '''
+    var _gauges=_gauges||[];(function(){var a=document.createElement("script");a.type="text/javascript",a.async=!0,
+    a.id="gauges-tracker",a.setAttribute("data-site-id","4ec16198613f5d28b3000001"),a.src="//secure.gaug.es/track.js";
+    var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})()
+    '''

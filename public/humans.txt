@@ -1,0 +1,10 @@
+/* AUTHOR */
+  Name: Grigory
+  Contact: floatboth@me.com
+  Twitter: @myfreeweb
+  From: Moscow, Russia
+
+/* SITE */
+  Language: English
+  Hosting: Heroku
+  Doctype: HTML5

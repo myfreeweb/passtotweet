@@ -3,12 +3,13 @@ if @items and @items.length isnt 0
   ul ->
     for item in @items
       li ->
-        span item
+        text item
+        text ' '
         a href: "/manage/del?index=#{_i + 1}", class: 'del', 'delete'
 else
   div 'None so far, add your first one now:'
 
-h2 'Add a password', ->
-  form action: '', method: 'post', ->
-    input type: 'text', name: 'pwd'
-    button type: 'submit', 'Add!'
+h2 'Add a password'
+form action: '', method: 'post', ->
+  input type: 'text', name: 'pwd'
+  button type: 'submit', 'Add!'

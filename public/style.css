@@ -1,0 +1,73 @@
+/* http://github.com/necolas/normalize.css */
+article, footer, header, section {  display: block }
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body, button, input, select, textarea {  font-family: sans-serif }
+a:focus {  outline: thin dotted }
+a:hover, a:active {  outline: 0 }
+ul, ol {  margin-left: 0; padding: 0 0 0 40px;}
+form {  margin: 0 }
+button, input, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button, input {  line-height: normal; }
+button {
+  cursor: pointer;
+  -webkit-appearance: button;
+  *overflow: visible;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {  border: 0; padding: 0;}
+textarea {  overflow: auto; vertical-align: top; resize: none; }
+
+/* my style */
+body {
+  margin: 0 auto;
+  padding: 2em 1em;
+  background: #eeeeec;
+  color: #2e3436;
+  font-size: 14px;
+}
+a {  color: #4e9a06; }
+a:hover {  color: #73d216; }
+a.del {  color: #a40000; }
+a.del:hover {  color: #cc0000; }
+::selection {  background: #73d216; color: #eeeeec; }
+::-moz-selection {  background: #73d216; color: #eeeeec; }
+h1, h2 {  font-family: "Gentium Basic", Garamond, serif; }
+h1 {  font-size: 2.9em; }
+h2 {  font-size: 1.8em; }
+label, input, textarea, button {  display: block; }
+input, textarea, button {
+  width: 100%;
+  margin-bottom: 0.5em;
+  padding: 2px;
+  border: #4e9a06 solid 1px;
+  background: #fefefe;
+}
+footer {
+  margin-top: 2em;
+  padding-top: 0.5em;
+  border-top: #d3d7cf solid 2px;
+}
+@media screen and (min-width:640px) {
+  body {
+    width: 75%;
+    font-size: 16px;
+  }
+  input, textarea, button {
+    width: 50%;
+  }
+}
+@media screen and (min-width:1210px) {
+  body {  width: 60%; }
+}
+@media screen and (min-width:1600px) {
+  body {  font-size: 20px; }
+}

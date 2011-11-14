@@ -85,7 +85,6 @@ require('zappa') process.env.PORT or 8080, ->
       @redirect '/auth'
 
   @get '/logout': ->
-    console.log twi.options.cookie
     @response.clearCookie twi.options.cookie
     @request.flash 'info', 'Good bye!'
     @redirect '/'

@@ -1,8 +1,10 @@
 h2 'Current passwords'
-if @items
+if @items and @items.length isnt 0
   ul ->
     for item in @items
-      li item
+      li ->
+        span item
+        a href: "/manage/del?index=#{_i + 1}", class: 'del', 'delete'
 else
   div 'None so far, add your first one now:'
 

@@ -23,7 +23,7 @@ require('zappa') process.env.PORT or 8080, ->
       @redirect '/'
     else
       twi.showUser @body.uname, (err, data) =>
-        if err or data == []
+        if err or data is []
           @request.flash 'error', 'Invalid username.'
           @redirect '/'
         else
@@ -51,7 +51,7 @@ require('zappa') process.env.PORT or 8080, ->
       # but I don't want to monkeypatch ntwitter
       h = "#{c.user_id}t"
       db.hexists h, 'k', (err, status) =>
-        if status == 0
+        if status is 0
           db.hmset h, k: c.access_token_key, s: c.access_token_secret
 
       db.llen c.user_id, (err, len) =>
@@ -64,12 +64,22 @@ require('zappa') process.env.PORT or 8080, ->
     c = twi.cookie @request
     if c
       p = @body.pwd
-      if typeof p != 'undefined' and p.length > 5 and p.length < 128
+      if typeof p isnt 'undefined' and p.length > 5 and p.length < 128
         db.rpush c.user_id, p, (err) =>
           @request.flash 'info', 'Successfully added password!'
           @redirect '/manage'
       else
         @request.flash 'error', 'Invalid password!'
         @redirect '/manage'
+    else
+      @redirect '/auth'
+
+  @get '/manage/del': ->
+    c = twi.cookie @request
+    if c
+      db.lindex c.user_id, @params.index, (err, val) =>
+        db.lrem c.user_id, 1, val, (err) =>
+          @request.flash 'info', 'Successfully deleted password!'
+          @redirect '/manage'
     else
       @redirect '/auth'

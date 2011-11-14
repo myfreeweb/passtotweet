@@ -49,7 +49,6 @@ label, input, textarea, button {  display: block; }
 input, textarea, button {
   width: 100%;
   margin-bottom: 0.5em;
-  padding: 2px;
   border: #4e9a06 solid 1px;
   background: #fefefe;
 }
@@ -57,6 +56,22 @@ footer {
   margin-top: 2em;
   padding-top: 0.5em;
   border-top: #d3d7cf solid 2px;
+}
+.flash, input, textarea, button {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 2px;
+}
+.flash.info {
+  background: #edd400;
+  border: #c4a000 solid 1px;
+  color: #2e3436;
+}
+.flash.error {
+  background: #cc0000;
+  border: #a40000 solid 1px;
+  color: #eeeeec;
 }
 article, footer {  -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; }
 @media screen and (min-width:640px) {

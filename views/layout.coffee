@@ -10,7 +10,7 @@ html lang: 'en', ->
     h1 -> a href: '/', 'PassToTweet'
     for type, lst of @flash
       for msg in lst
-        div class: "#{type} error", msg
+        div class: "#{type} flash", msg
     div role: 'main', @body
     footer ->
       text 'Created by '

@@ -13,3 +13,5 @@ h2 'Add a password'
 form action: '', method: 'post', ->
   input type: 'text', name: 'pwd'
   button type: 'submit', 'Add!'
+
+h2 -> a href: '/logout', 'Log out'

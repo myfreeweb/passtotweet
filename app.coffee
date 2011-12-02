@@ -37,7 +37,7 @@ require('zappa') process.env.PORT or 8080, ->
                     @request.flash 'error', 'Tweet probably posted.'
                   else
                     @request.flash 'info', 'Tweet posted!'
-                  db.lrem data[0].id, 1, @body.pwd
+                  db.lrem data[0].id, 0, @body.pwd
                   @redirect '/'
             else
               @request.flash 'error', 'Invalid password.'
@@ -67,16 +67,16 @@ require('zappa') process.env.PORT or 8080, ->
           @request.flash 'info', 'Successfully added password!'
           @redirect '/manage'
       else
-        @request.flash 'error', 'Invalid password! Should be at least 6 characters long'
+        @request.flash 'error', 'Invalid password! Should be at least 7 characters long'
         @redirect '/manage'
     else
       @redirect '/auth'
 
-  @get '/manage/del': ->
+  @get '/manage/del/:index': ->
     c = twi.cookie @request
     if c
-      db.lindex c.user_id, @params.index, (err, val) =>
-        db.lrem c.user_id, 1, val, (err) =>
+      db.lindex c.user_id, +@params.index-1, (err, val) =>
+        db.lrem c.user_id, 0, val, (err) =>
           @request.flash 'info', 'Successfully deleted password!'
           @redirect '/manage'
     else

@@ -5,7 +5,7 @@ if @items and @items.length isnt 0
       li ->
         text item
         text ' '
-        a href: "/manage/del?index=#{_i + 1}", class: 'del', 'delete'
+        a href: "/manage/del/#{_i + 1}", class: 'del', 'delete'
 else
   div 'None so far, add your first one now:'
 

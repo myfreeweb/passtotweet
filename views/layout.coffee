@@ -4,8 +4,8 @@ html lang: 'en', ->
     meta charset: 'utf-8'
     meta name: 'viewport', content: 'width=device-width, initial-scale=1.0'
     title "#{if @title then @title + ' / ' else ''}PassToTweet"
-    link rel: 'stylesheet', href: 'http://fonts.googleapis.com/css?family=Gentium+Basic:700', type: 'text/css'
-    link rel: 'stylesheet', href: '/style.css', type: 'text/css'
+    link rel: 'stylesheet', href: 'http://fonts.googleapis.com/css?family=Gentium+Basic:700'
+    link rel: 'stylesheet', href: '/style.css'
   body ->
     h1 -> a href: '/', 'PassToTweet'
     for type, lst of @flash
@@ -14,7 +14,7 @@ html lang: 'en', ->
     div role: 'main', @body
     footer ->
       text 'Created by '
-      a href: 'http://floatboth.com', rel: 'author', 'Grigory V.'
+      a href: 'http://floatboth.com', rel: 'author', 'Greg V.'
       text ' using '
       a href: 'http://zappajs.org/', 'zappa'
       text ', '

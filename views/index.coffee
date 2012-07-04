@@ -8,9 +8,7 @@ a few tweets for you, but just as much tweets as you want.
 Maybe you just want it. Maybe you&apos;re in a hospital,
 police, whatever. Maybe you can&apos;t use the internets
 for some reason, but you can call someone.
-Or you&apos;ll lose your main Twitter password.
-You can also use it to tweet on public Wi-Fi, maybe, if
-you&apos;re that paranoid.'''
+Or you lost your main Twitter password. Whatever.'''
   p '''I&apos;ve invented the app while reading
 <a href="http://allthingsd.com/20111019/what-not-to-do-in-hong-kong-trust-me-on-this-one/">
 this</a>, by the way.'''

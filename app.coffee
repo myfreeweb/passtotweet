@@ -2,7 +2,7 @@ twitter = require 'ntwitter'
 twi = new twitter consumer_key: process.env.CK, consumer_secret: process.env.CS
 db = require('redis-url').connect process.env.REDISTOGO_URL or '127.0.0.1:6739'
 
-require('zappajs') process.env.PORT or 8080, ->
+require('zappa') process.env.PORT or 8080, ->
   @use 'bodyParser', 'methodOverride', 'cookieParser', session: {secret: process.env.SECRET or '1'}
   @use twi.login '/auth', '/manage'
   @use @app.router, 'static'
